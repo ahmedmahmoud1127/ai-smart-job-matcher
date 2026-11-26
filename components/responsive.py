@@ -14,6 +14,8 @@ img,svg,video,canvas{max-width:100%;}
 }
 
 @media(max-width:900px){
+[data-testid="stElementContainer"]:has(> [data-testid="stMarkdown"] .lg-bg),[data-testid="stElementContainer"]:has(.lg-left){height:auto!important;margin-bottom:.8rem!important;overflow:visible!important;}
+.lg-left,.lg-text{position:relative;}
 .lg-art{height:340px!important;overflow:hidden!important;margin:1rem auto 0!important;}
 .lg-left h1.lg-headline{white-space:normal!important;}
 .st-key-hero{padding:1.3rem 1.2rem!important;min-height:0!important;}
