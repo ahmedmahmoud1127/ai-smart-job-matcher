@@ -44,11 +44,12 @@ img,svg,video,canvas{max-width:100%;}
 .stat-value{font-size:1.5rem!important;}
 .job{flex-wrap:wrap;}
 .match{margin-left:0!important;}
-/* navbar becomes one swipeable row */
-.st-key-navbar [data-testid="stHorizontalBlock"]{flex-wrap:nowrap!important;overflow-x:auto!important;gap:.4rem!important;-webkit-overflow-scrolling:touch;padding-bottom:.3rem;}
-.st-key-navbar [data-testid="stColumn"],.st-key-navbar [data-testid="column"]{flex:0 0 auto!important;width:auto!important;min-width:max-content!important;}
-.st-key-navbar button{white-space:nowrap;}
-.st-key-navbar button p{font-size:.8rem!important;white-space:nowrap;}
+/* navbar: brand on top, then the page buttons wrap into compact rows */
+.st-key-navbar [data-testid="stHorizontalBlock"]{flex-wrap:wrap!important;gap:.35rem!important;justify-content:flex-start;}
+.st-key-navbar [data-testid="stColumn"],.st-key-navbar [data-testid="column"]{flex:0 0 auto!important;width:auto!important;min-width:0!important;}
+.st-key-navbar [data-testid="stColumn"]:first-child,.st-key-navbar [data-testid="column"]:first-child{flex:1 0 100%!important;width:100%!important;}
+.st-key-navbar button{white-space:nowrap;padding:.25rem .6rem!important;min-height:2.1rem!important;}
+.st-key-navbar button p{font-size:.78rem!important;white-space:nowrap;}
 /* keep small inline rows (checkboxes, button pairs) from squashing, let wide layouts stack */
 h1{font-size:1.7rem!important;}h2{font-size:1.4rem!important;}h3{font-size:1.15rem!important;}
 [data-testid="stTabs"] [role="tablist"]{overflow-x:auto;}
