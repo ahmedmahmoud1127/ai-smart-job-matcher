@@ -67,8 +67,8 @@ h1{font-size:1.7rem!important;}h2{font-size:1.4rem!important;}h3{font-size:1.15r
 [class*="st-key-card_"]{padding-bottom:1.3rem!important;}
 }
 @media(min-width:641px) and (max-width:1100px){
-.block-container [data-testid="stHorizontalBlock"]:not(.st-key-navbar [data-testid="stHorizontalBlock"]):not(.st-key-login_card [data-testid="stHorizontalBlock"]){flex-wrap:wrap!important;}
-.block-container [data-testid="stHorizontalBlock"]:not(.st-key-navbar [data-testid="stHorizontalBlock"]):not(.st-key-login_card [data-testid="stHorizontalBlock"])>[data-testid="stColumn"]{flex:1 1 calc(50% - 1rem)!important;min-width:calc(50% - 1rem)!important;}
+.block-container [data-testid="stHorizontalBlock"]:not(.st-key-navbar [data-testid="stHorizontalBlock"]):not(.st-key-login_card [data-testid="stHorizontalBlock"]):not([class*="st-key-card_"] [data-testid="stHorizontalBlock"]){flex-wrap:wrap!important;}
+.block-container [data-testid="stHorizontalBlock"]:not(.st-key-navbar [data-testid="stHorizontalBlock"]):not(.st-key-login_card [data-testid="stHorizontalBlock"]):not([class*="st-key-card_"] [data-testid="stHorizontalBlock"])>[data-testid="stColumn"]{flex:1 1 calc(50% - 1rem)!important;min-width:calc(50% - 1rem)!important;}
 }
 @media(max-width:900px){
 [data-testid="stColumn"]:has(.lg-left),[data-testid="stColumn"]:has(.st-key-login_card){flex:1 1 100%!important;min-width:100%!important;}
