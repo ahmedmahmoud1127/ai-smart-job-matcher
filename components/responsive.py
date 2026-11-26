@@ -14,7 +14,7 @@ img,svg,video,canvas{max-width:100%;}
 }
 
 @media(max-width:900px){
-[data-testid="stElementContainer"]:has(> [data-testid="stMarkdown"] .lg-bg),[data-testid="stElementContainer"]:has(.lg-left){height:auto!important;margin-bottom:.8rem!important;overflow:visible!important;}
+[data-testid="stElementContainer"]:has(> [data-testid="stMarkdown"] .lg-bg),[data-testid="stElementContainer"]:has(.lg-left){height:auto!important;margin-bottom:0!important;overflow:visible!important;}
 .lg-left,.lg-text{position:relative;}
 .lg-art{height:340px!important;overflow:hidden!important;margin:1rem auto 0!important;}
 .lg-left h1.lg-headline{white-space:normal!important;}
@@ -50,6 +50,9 @@ img,svg,video,canvas{max-width:100%;}
 .st-key-navbar [data-testid="stColumn"]:first-child,.st-key-navbar [data-testid="column"]:first-child{flex:1 0 100%!important;width:100%!important;}
 .st-key-navbar button{white-space:nowrap;padding:.25rem .6rem!important;min-height:2.1rem!important;}
 .st-key-navbar button p{font-size:.78rem!important;white-space:nowrap;}
+.st-key-navbar [data-testid="stColumn"]:first-child,.st-key-navbar [data-testid="column"]:first-child{margin-bottom:.5rem;}
+[class*="st-key-card_"] [data-testid="stButton"],[class*="st-key-card_"] [data-testid="stElementContainer"]:has(button){margin-top:.3rem;}
+[class*="st-key-card_"]{padding-bottom:1.3rem!important;}
 /* keep small inline rows (checkboxes, button pairs) from squashing, let wide layouts stack */
 h1{font-size:1.7rem!important;}h2{font-size:1.4rem!important;}h3{font-size:1.15rem!important;}
 [data-testid="stTabs"] [role="tablist"]{overflow-x:auto;}
