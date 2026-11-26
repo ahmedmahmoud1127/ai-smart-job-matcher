@@ -55,7 +55,7 @@ h1{font-size:1.7rem!important;}h2{font-size:1.4rem!important;}h3{font-size:1.15r
 .st-key-navbar button span[data-testid="stIconMaterial"]{display:none!important;}
 .st-key-navbar button p{overflow:visible!important;text-overflow:clip!important;}
 }
-@media(max-width:1280px){
+@media(max-width:1500px){
 /* navbar: brand on top, then the page buttons wrap into compact rows */
 .st-key-navbar [data-testid="stHorizontalBlock"]{flex-wrap:wrap!important;gap:.35rem!important;justify-content:flex-start;}
 .st-key-navbar [data-testid="stColumn"],.st-key-navbar [data-testid="column"]{flex:0 0 auto!important;width:auto!important;min-width:0!important;}
