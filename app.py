@@ -1,4 +1,4 @@
-"""AI Smart Job Matcher – Main Dashboard.  Run: streamlit run app.py"""
+"""AI Smart Job Matcher – Main Dashboard. Run: streamlit run app.py"""
 import copy
 
 import streamlit as st
@@ -16,6 +16,7 @@ from components.login.page import render_login_page
 from components.navbar import go, render_navbar
 from components.profile.page import render_profile_page
 from components.recommended_jobs import render_recommended_jobs
+from components.responsive import inject_responsive
 from components.skills_overview import render_skills_overview
 from components.statistics import render_statistics
 from components.styles import inject_styles
@@ -26,13 +27,11 @@ from database.db import init_db
 st.set_page_config(page_title="AI Smart Job Matcher", page_icon="💼", layout="wide",
                    initial_sidebar_state="collapsed")
 
-
 def init_state() -> None:
     st.session_state.setdefault("page", "Dashboard")
     st.session_state.setdefault("roadmap", copy.deepcopy(ROADMAP))
     st.session_state.setdefault("saved_jobs", set())
     st.session_state.setdefault("show_all_skills", False)
-
 
 def dashboard() -> None:
     render_hero()
@@ -50,13 +49,11 @@ def dashboard() -> None:
     with s2:
         render_motivation()
 
-
 def coming_soon(page: str) -> None:
     with st.container(key="card_soon"):
         st.markdown(f"### {page}")
         st.write("This page is the next feature on the roadmap. Dashboard, My Profile, CV Analyzer, Jobs, Learning Roadmap, Skill Gap Analysis and Analytics are built so far.")
         st.button("Back to Dashboard", on_click=go, args=("Dashboard",))
-
 
 @st.cache_resource
 def _setup_database() -> bool:
@@ -64,12 +61,12 @@ def _setup_database() -> bool:
     init_auth()
     return True
 
-
 _setup_database()
 init_state()
 inject_styles()
 if not st.session_state.get("authenticated"):
     render_login_page()  # the rest of the app is only shown after signing in
+    inject_responsive()  # after the login CSS so the phone/tablet rules win
     st.stop()
 render_navbar()
 if message := st.session_state.pop("welcome_message", None):  # one-time greeting after a sign-up
@@ -91,3 +88,4 @@ elif page == "Analytics":
     render_analytics_page()
 else:
     coming_soon(page)
+inject_responsive()  # last, so these overrides apply on every page
